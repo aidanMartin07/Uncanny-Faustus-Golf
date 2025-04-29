@@ -1,0 +1,106 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxa1ax8f0x5da"]
+
+[ext_resource type="Texture2D" uid="uid://eiys3psxsp3l" path="res://assets/images/hudbg.png" id="1_fsom3"]
+[ext_resource type="Texture2D" uid="uid://et5akme6o1ov" path="res://assets/images/title.png" id="2_0ebjn"]
+[ext_resource type="Texture2D" uid="uid://cacc43pgr3ldj" path="res://assets/images/faustus_book.jpg" id="3_ob46e"]
+[ext_resource type="Theme" uid="uid://c3b1jltpl4c6b" path="res://assets/font/title_theme.tres" id="4_uqeha"]
+
+[node name="Background" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HudBG" type="Sprite2D" parent="."]
+position = Vector2(128, 324)
+scale = Vector2(1, 1.26563)
+texture = ExtResource("1_fsom3")
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(124.646, 99.375)
+scale = Vector2(0.805102, 0.805102)
+texture = ExtResource("2_0ebjn")
+
+[node name="Faustuses" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FaustusBook" type="Sprite2D" parent="Faustuses"]
+modulate = Color(1, 1, 1, 0.505882)
+position = Vector2(352, 164)
+scale = Vector2(1.02128, 1.09333)
+texture = ExtResource("3_ob46e")
+
+[node name="FaustusBook2" type="Sprite2D" parent="Faustuses"]
+modulate = Color(1, 1, 1, 0.505882)
+position = Vector2(544, 164)
+scale = Vector2(1.02128, 1.09333)
+texture = ExtResource("3_ob46e")
+
+[node name="FaustusBook3" type="Sprite2D" parent="Faustuses"]
+modulate = Color(1, 1, 1, 0.505882)
+position = Vector2(736, 164)
+scale = Vector2(1.02128, 1.09333)
+texture = ExtResource("3_ob46e")
+
+[node name="FaustusBook4" type="Sprite2D" parent="Faustuses"]
+modulate = Color(1, 1, 1, 0.505882)
+position = Vector2(928, 164)
+scale = Vector2(1.02128, 1.09333)
+texture = ExtResource("3_ob46e")
+
+[node name="FaustusBook5" type="Sprite2D" parent="Faustuses"]
+modulate = Color(1, 1, 1, 0.505882)
+position = Vector2(1120, 164)
+scale = Vector2(1.02128, 1.09333)
+texture = ExtResource("3_ob46e")
+
+[node name="FaustusBook6" type="Sprite2D" parent="Faustuses"]
+modulate = Color(1, 1, 1, 0.505882)
+position = Vector2(352, 492)
+scale = Vector2(1.02128, 1.09333)
+texture = ExtResource("3_ob46e")
+
+[node name="FaustusBook7" type="Sprite2D" parent="Faustuses"]
+modulate = Color(1, 1, 1, 0.505882)
+position = Vector2(544, 492)
+scale = Vector2(1.02128, 1.09333)
+texture = ExtResource("3_ob46e")
+
+[node name="FaustusBook8" type="Sprite2D" parent="Faustuses"]
+modulate = Color(1, 1, 1, 0.505882)
+position = Vector2(736, 492)
+scale = Vector2(1.02128, 1.09333)
+texture = ExtResource("3_ob46e")
+
+[node name="FaustusBook9" type="Sprite2D" parent="Faustuses"]
+modulate = Color(1, 1, 1, 0.505882)
+position = Vector2(928, 492)
+scale = Vector2(1.02128, 1.09333)
+texture = ExtResource("3_ob46e")
+
+[node name="FaustusBook10" type="Sprite2D" parent="Faustuses"]
+modulate = Color(1, 1, 1, 0.505882)
+position = Vector2(1120, 492)
+scale = Vector2(1.02128, 1.09333)
+texture = ExtResource("3_ob46e")
+
+[node name="Title2" type="Sprite2D" parent="Faustuses"]
+position = Vector2(746, 198)
+scale = Vector2(0.805102, 0.805102)
+texture = ExtResource("2_0ebjn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 620.0
+offset_top = 320.0
+offset_right = 872.0
+offset_bottom = 512.0
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_uqeha")
+text = "Start New Game"
