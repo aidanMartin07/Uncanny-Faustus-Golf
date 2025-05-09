@@ -27,7 +27,7 @@ texture_margin_top = 8.0
 texture_margin_right = 8.0
 texture_margin_bottom = 8.0
 region_rect = Rect2(0, 0, 24, 24)
-modulate_color = Color(0.458824, 0.513726, 1, 1)
+modulate_color = Color(0.999973, 0.668609, 0.212794, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_msd35"]
 texture = ExtResource("2_vv4cy")
@@ -36,7 +36,7 @@ texture_margin_top = 8.0
 texture_margin_right = 8.0
 texture_margin_bottom = 8.0
 region_rect = Rect2(0, 0, 24, 24)
-modulate_color = Color(0, 0.831373, 1, 1)
+modulate_color = Color(1, 0.645286, 0.538082, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_633tc"]
 texture = ExtResource("2_vv4cy")
@@ -45,7 +45,7 @@ texture_margin_top = 8.0
 texture_margin_right = 8.0
 texture_margin_bottom = 8.0
 region_rect = Rect2(0, 0, 24, 24)
-modulate_color = Color(0.54902, 0, 1, 1)
+modulate_color = Color(0.554437, 0.125901, 0.0694593, 1)
 
 [resource]
 default_font = ExtResource("1_wl233")
