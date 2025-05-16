@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxa1ax8f0x5da"]
+[gd_scene load_steps=6 format=3 uid="uid://dxa1ax8f0x5da"]
 
+[ext_resource type="Script" uid="uid://udpjetrr1glj" path="res://scenes/main_menu/main_menu.gd" id="1_wem23"]
 [ext_resource type="Texture2D" uid="uid://et5akme6o1ov" path="res://assets/images/title.png" id="2_0ebjn"]
 [ext_resource type="Texture2D" uid="uid://cacc43pgr3ldj" path="res://assets/images/faustus_book.jpg" id="3_ob46e"]
+[ext_resource type="Texture2D" uid="uid://denldx575uyek" path="res://assets/images/evil_faustus.png" id="3_uqeha"]
 [ext_resource type="Theme" uid="uid://c3b1jltpl4c6b" path="res://assets/font/title_theme.tres" id="4_uqeha"]
 
 [node name="MainMenu" type="Control"]
@@ -9,6 +11,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_wem23")
 
 [node name="Faustuses" type="Control" parent="."]
 layout_mode = 3
@@ -67,34 +70,52 @@ scale = Vector2(0.595746, 0.637775)
 texture = ExtResource("3_ob46e")
 
 [node name="FaustusBook11" type="Sprite2D" parent="Faustuses"]
-position = Vector2(312, 478.666)
-scale = Vector2(0.595746, 0.637775)
+position = Vector2(312, 515.5)
+scale = Vector2(0.595746, 0.883334)
 texture = ExtResource("3_ob46e")
 
 [node name="FaustusBook12" type="Sprite2D" parent="Faustuses"]
-position = Vector2(424, 478.666)
-scale = Vector2(0.595746, 0.637775)
+position = Vector2(424, 515.5)
+scale = Vector2(0.595746, 0.883334)
 texture = ExtResource("3_ob46e")
 
 [node name="FaustusBook13" type="Sprite2D" parent="Faustuses"]
-position = Vector2(536, 478.666)
-scale = Vector2(0.595746, 0.637775)
+position = Vector2(536, 515.5)
+scale = Vector2(0.595746, 0.883334)
 texture = ExtResource("3_ob46e")
 
 [node name="FaustusBook14" type="Sprite2D" parent="Faustuses"]
-position = Vector2(632, 478.666)
-scale = Vector2(0.595746, 0.637775)
+position = Vector2(632, 515.5)
+scale = Vector2(0.595746, 0.883334)
 texture = ExtResource("3_ob46e")
 
 [node name="FaustusBook15" type="Sprite2D" parent="Faustuses"]
-position = Vector2(744, 478.666)
-scale = Vector2(0.595746, 0.637775)
+position = Vector2(744, 515.5)
+scale = Vector2(0.595746, 0.883334)
 texture = ExtResource("3_ob46e")
 
 [node name="Title2" type="Sprite2D" parent="Faustuses"]
 position = Vector2(504, 160)
 scale = Vector2(1.014, 1.017)
 texture = ExtResource("2_0ebjn")
+
+[node name="EvilFaustus" type="Sprite2D" parent="Faustuses"]
+position = Vector2(894, 150)
+texture = ExtResource("3_uqeha")
+
+[node name="EvilFaustus3" type="Sprite2D" parent="Faustuses"]
+position = Vector2(894, 474)
+scale = Vector2(1, 1.16)
+texture = ExtResource("3_uqeha")
+
+[node name="EvilFaustus4" type="Sprite2D" parent="Faustuses"]
+position = Vector2(1082, 474)
+scale = Vector2(1, 1.16)
+texture = ExtResource("3_uqeha")
+
+[node name="EvilFaustus2" type="Sprite2D" parent="Faustuses"]
+position = Vector2(1082, 150)
+texture = ExtResource("3_uqeha")
 
 [node name="Buttons" type="Control" parent="."]
 anchors_preset = 0
@@ -107,6 +128,7 @@ offset_left = 345.0
 offset_top = 304.0
 offset_right = 664.0
 offset_bottom = 424.0
+theme_override_constants/separation = 16
 
 [node name="StartNew" type="Button" parent="Buttons/VBoxContainer"]
 layout_mode = 2
@@ -117,3 +139,44 @@ text = "START NEW GAME"
 layout_mode = 2
 theme = ExtResource("4_uqeha")
 text = "START FROM LEVEL"
+
+[node name="Quit" type="Button" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_uqeha")
+text = "QUIT"
+
+[node name="LevelSelect" type="VBoxContainer" parent="Buttons"]
+visible = false
+layout_mode = 0
+offset_left = 896.0
+offset_top = 152.0
+offset_right = 1080.0
+offset_bottom = 288.0
+
+[node name="Level1" type="Button" parent="Buttons/LevelSelect"]
+layout_mode = 2
+theme = ExtResource("4_uqeha")
+text = "LEVEL 1"
+
+[node name="Level2" type="Button" parent="Buttons/LevelSelect"]
+layout_mode = 2
+theme = ExtResource("4_uqeha")
+text = "LEVEL 2"
+
+[node name="Level3" type="Button" parent="Buttons/LevelSelect"]
+layout_mode = 2
+theme = ExtResource("4_uqeha")
+text = "LEVEL 3"
+
+[node name="Level4" type="Button" parent="Buttons/LevelSelect"]
+layout_mode = 2
+theme = ExtResource("4_uqeha")
+text = "LEVEL 4"
+
+[connection signal="button_up" from="Buttons/VBoxContainer/StartNew" to="." method="_on_start_new_button_up"]
+[connection signal="button_up" from="Buttons/VBoxContainer/StartLevel" to="." method="_on_start_level_button_up"]
+[connection signal="button_up" from="Buttons/VBoxContainer/Quit" to="." method="_on_quit_button_up"]
+[connection signal="button_up" from="Buttons/LevelSelect/Level1" to="." method="_on_level_1_button_up"]
+[connection signal="button_up" from="Buttons/LevelSelect/Level2" to="." method="_on_level_2_button_up"]
+[connection signal="button_up" from="Buttons/LevelSelect/Level3" to="." method="_on_level_3_button_up"]
+[connection signal="button_up" from="Buttons/LevelSelect/Level4" to="." method="_on_level_4_button_up"]

@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://cr5tna28rrdkr"]
+
+[ext_resource type="Script" uid="uid://k1s7sqww8rme" path="res://scenes/entities/goal/goal.gd" id="1_msbh2"]
+[ext_resource type="Texture2D" uid="uid://bg65enxjqoorb" path="res://assets/images/goalhole.png" id="1_wtwi2"]
+[ext_resource type="Texture2D" uid="uid://ixqqspsw5kbe" path="res://assets/images/goalflag.png" id="2_bruoe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msbh2"]
+atlas = ExtResource("2_bruoe")
+region = Rect2(0, 0, 384, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v75o6"]
+atlas = ExtResource("2_bruoe")
+region = Rect2(384, 0, 384, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqr12"]
+atlas = ExtResource("2_bruoe")
+region = Rect2(768, 0, 384, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fl8m"]
+atlas = ExtResource("2_bruoe")
+region = Rect2(1152, 0, 384, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aw4gj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msbh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v75o6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqr12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fl8m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_msbh2"]
+
+[node name="Goal" type="Node2D"]
+script = ExtResource("1_msbh2")
+
+[node name="Hole" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_wtwi2")
+
+[node name="Flag" type="AnimatedSprite2D" parent="."]
+position = Vector2(40, -64)
+scale = Vector2(0.45, 0.45)
+sprite_frames = SubResource("SpriteFrames_aw4gj")
+frame_progress = 0.436299
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_msbh2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

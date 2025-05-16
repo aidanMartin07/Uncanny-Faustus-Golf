@@ -1,50 +1,35 @@
-[gd_scene load_steps=6 format=3 uid="uid://b378chjeghkpk"]
+[gd_scene load_steps=7 format=3 uid="uid://b378chjeghkpk"]
 
-[ext_resource type="Texture2D" uid="uid://cacc43pgr3ldj" path="res://assets/images/faustus_book.jpg" id="1_1hmtu"]
+[ext_resource type="Texture2D" uid="uid://dhl3e1vh03f46" path="res://assets/images/dr_faust_small.png" id="1_1hmtu"]
 [ext_resource type="Script" uid="uid://ckyw0nkfufbl5" path="res://scenes/entities/player/player.gd" id="1_635qg"]
-[ext_resource type="Script" uid="uid://o1x5dv80chv6" path="res://scenes/entities/player/state.gd" id="3_58kc7"]
-[ext_resource type="Script" uid="uid://ddq424jhdjhvc" path="res://scenes/entities/player/GIdle.gd" id="4_nh4ur"]
+[ext_resource type="AudioStream" uid="uid://ce0id8c0pxmm2" path="res://assets/sounds/sfxWhistleGrab.ogg" id="3_58kc7"]
+[ext_resource type="AudioStream" uid="uid://r63b41qvn3sy" path="res://assets/sounds/sfxXylophoneCancel.ogg" id="4_nh4ur"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_635qg"]
+bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1hmtu"]
-radius = 64.0
+radius = 32.0
 
-[node name="Player" type="RigidBody2D"]
-scale = Vector2(0.256, 0.256)
+[node name="RigidBody2D" type="RigidBody2D" groups=["Player"]]
+collision_layer = 3
+physics_material_override = SubResource("PhysicsMaterial_635qg")
+gravity_scale = 0.0
+lock_rotation = true
+linear_damp = 1.0
 script = ExtResource("1_635qg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
 texture = ExtResource("1_1hmtu")
-region_enabled = true
-region_rect = Rect2(30, 50, 128, 128)
+region_rect = Rect2(30, 50, 64, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1hmtu")
 
-[node name="HitDirection" type="Line2D" parent="."]
-z_index = 1
-points = PackedVector2Array(0, 0, 0, 0)
-width = 4.0
-default_color = Color(0.501961, 0, 0, 1)
+[node name="Sounds" type="Node" parent="."]
 
-[node name="States" type="Node" parent="."]
+[node name="sfxGrab" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("3_58kc7")
 
-[node name="GSpawnIn" type="Node" parent="States"]
-script = ExtResource("3_58kc7")
-metadata/_custom_type_script = "uid://o1x5dv80chv6"
-
-[node name="GIdle" type="Node" parent="States"]
-script = ExtResource("4_nh4ur")
-metadata/_custom_type_script = "uid://o1x5dv80chv6"
-
-[node name="GMoving" type="Node" parent="States"]
-script = ExtResource("3_58kc7")
-metadata/_custom_type_script = "uid://o1x5dv80chv6"
-
-[node name="GWin" type="Node" parent="States"]
-script = ExtResource("3_58kc7")
-metadata/_custom_type_script = "uid://o1x5dv80chv6"
-
-[node name="GMouseModifier" type="Node" parent="States"]
-script = ExtResource("3_58kc7")
-metadata/_custom_type_script = "uid://o1x5dv80chv6"
+[node name="sfxRelease" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("4_nh4ur")
