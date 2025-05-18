@@ -3,7 +3,8 @@ extends Control
 var levels = [
 	preload("res://scenes/levels/level_1/level_1.tscn"),
 	preload("res://scenes/levels/level_2/level_2.tscn"),
-	preload("res://scenes/levels/level_3/level_3.tscn")
+	preload("res://scenes/levels/level_3/level_3.tscn"),
+	preload("res://scenes/levels/level_4/level_4.tscn")
 ]
 
 
@@ -40,4 +41,4 @@ func _on_level_3_button_up() -> void:
 	load_level(2)
 
 func _on_level_4_button_up() -> void:
-	pass
+	load_level(3)

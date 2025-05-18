@@ -9,6 +9,7 @@ var path_prefix = "res://scenes/levels"
 var stroke_count: int = 0
 
 func _ready() -> void:
+	get_parent().owner.strokes = 0
 	#next_level = get_node("Goal").next_level
 	#get_node("Goal").win.connect(_player_win)
 	next_path = path_prefix + next_level_path

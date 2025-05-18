@@ -4,7 +4,8 @@ var main_menu = preload("res://scenes/main_menu/main_menu.tscn")
 var levels = [
 	preload("res://scenes/levels/level_1/level_1.tscn"),
 	preload("res://scenes/levels/level_2/level_2.tscn"),
-	preload("res://scenes/levels/level_3/level_3.tscn")
+	preload("res://scenes/levels/level_3/level_3.tscn"),
+	preload("res://scenes/levels/level_4/level_4.tscn"),
 ]
 
 var animations = [
@@ -12,11 +13,14 @@ var animations = [
 ]
 var in_game: bool = false
 
+var strokes: int = 0
+
 func _ready() -> void:
 	connect_main()
 	$Hud/Thoughts.play("static")
 
 func _physics_process(delta: float) -> void:
+	$Hud/StrokesCounter.text = "Strokes: " + str(strokes)
 	
 	if Input.is_action_just_pressed("Pause") and in_game:
 		pause_game()

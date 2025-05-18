@@ -63,6 +63,7 @@ func mouse_released():
 		var y_component = $Sprite2D.position.y - end_point.y
 		apply_impulse(Vector2(x_component*power, y_component*power))
 		get_node("Sounds/sfxRelease").play()
+		get_parent().get_parent().owner.strokes += 1
 
 func is_moving():
 	return get_linear_velocity().length() > MOVEMENT_THRESHOLD

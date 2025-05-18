@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dtmebl4k4sfho"]
+[gd_scene load_steps=14 format=4 uid="uid://dtmebl4k4sfho"]
 
 [ext_resource type="Script" uid="uid://bogr7cwxcs8s8" path="res://scenes/levels/level_3/level_3.gd" id="1_qi3d5"]
 [ext_resource type="Shader" uid="uid://cd3oju7vnjy4k" path="res://scenes/levels/level_3/tile_shader.gdshader" id="2_bfr33"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dsukqnmv354xw" path="res://scenes/entities/enemy/enemy.tscn" id="8_83a0a"]
 [ext_resource type="Texture2D" uid="uid://bp2pqb8y5q8k5" path="res://assets/images/scary_luigi.jpg" id="9_rr702"]
 [ext_resource type="AudioStream" uid="uid://8iadj6hsjqg7" path="res://assets/sounds/luigi-burning.wav" id="10_bm2i8"]
+[ext_resource type="Texture2D" uid="uid://47tbki3m6rbh" path="res://assets/images/hay.png" id="11_bm2i8"]
+[ext_resource type="AudioStream" uid="uid://cfvfm6jk54bdk" path="res://assets/sounds/horse.wav" id="12_m7db3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kvnv3"]
 shader = ExtResource("2_bfr33")
@@ -36,14 +38,14 @@ scale = Vector2(1.3, 0.26)
 texture = ExtResource("5_qi3d5")
 
 [node name="RigidBody2D" parent="." instance=ExtResource("5_n35tx")]
-position = Vector2(736, 544)
+position = Vector2(704, 520)
 
 [node name="Sprite2D" parent="RigidBody2D" index="0"]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("6_n35tx")
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("player_node") instance=ExtResource("8_83a0a")]
-position = Vector2(672, -104)
+position = Vector2(176, 192)
 scale = Vector2(0.8, 0.8)
 player_node = NodePath("../RigidBody2D")
 
@@ -56,6 +58,15 @@ texture = ExtResource("9_rr702")
 [node name="LoseSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_bm2i8")
 volume_db = -15.0
+
+[node name="Hay" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(678, 96)
+scale = Vector2(0.166667, 0.166667)
+texture = ExtResource("11_bm2i8")
+
+[node name="Horse" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_m7db3")
 
 [editable path="Goal"]
 [editable path="RigidBody2D"]

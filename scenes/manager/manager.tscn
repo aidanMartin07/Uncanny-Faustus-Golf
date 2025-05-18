@@ -1,4 +1,4 @@
-[gd_scene load_steps=438 format=3 uid="uid://c2i2obb1dnd8d"]
+[gd_scene load_steps=439 format=3 uid="uid://c2i2obb1dnd8d"]
 
 [ext_resource type="Script" uid="uid://dxiwocvwnsor5" path="res://scenes/manager/manager.gd" id="1_86k2x"]
 [ext_resource type="AudioStream" uid="uid://pthe1es15fuk" path="res://assets/sounds/sfxPeakWin.ogg" id="1_gie0i"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://tr7yfuh6bvck" path="res://assets/thinks/TVWin8.png" id="3_704ij"]
 [ext_resource type="Texture2D" uid="uid://b8jbak66kbytl" path="res://assets/images/boom_strip17.png" id="3_ccyao"]
 [ext_resource type="Texture2D" uid="uid://xik46fuo3ohk" path="res://assets/thinks/TVDeath13.png" id="3_dflgv"]
+[ext_resource type="AudioStream" uid="uid://b6vpiq401dgft" path="res://assets/sounds/sfxSillyTwang.ogg" id="3_pawbo"]
 [ext_resource type="Texture2D" uid="uid://be4krcql5j7ef" path="res://assets/thinks/TVWin9.png" id="4_hv1jn"]
 [ext_resource type="Texture2D" uid="uid://dpl2m6wtsv2mc" path="res://assets/thinks/TVStatic.png" id="6_dflgv"]
 [ext_resource type="PackedScene" uid="uid://dxa1ax8f0x5da" path="res://scenes/main_menu/main_menu.tscn" id="9_dflgv"]
@@ -3016,6 +3017,9 @@ script = ExtResource("1_86k2x")
 
 [node name="WinSound" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("1_gie0i")
+
+[node name="sfxPause" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("3_pawbo")
 
 [node name="Music" type="Node" parent="."]
 

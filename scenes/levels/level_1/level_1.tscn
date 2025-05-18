@@ -32,7 +32,7 @@ scale = Vector2(0.196667, 0.196667)
 texture = ExtResource("5_7uxs1")
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("player_node") instance=ExtResource("6_3lh42")]
-position = Vector2(1240, 488)
+position = Vector2(856, 744)
 scale = Vector2(0.8, 0.8)
 player_node = NodePath("../RigidBody2D")
 
